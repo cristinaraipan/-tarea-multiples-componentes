@@ -3,7 +3,7 @@
       <h1>{{msg}}</h1>
         <h3>Tech</h3>
       <ul>
-        <li v-for= "cosa in tech" :key= "cosa.name">{{cosa.name}}</li>
+        <li v-for= "cosa in tech" v-bind:key= "cosa.name">{{cosa.name}}</li>
       </ul>
       <h3>Financial</h3>
       <ul>

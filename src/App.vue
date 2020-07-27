@@ -2,15 +2,18 @@
   <div id="app">
     <img id="imagen" alt="Vue zorro" src="./assets/zorro.png">
     <MiLista msg="Sophie's List of  Things to learn!"/>
+    <Formulario />
   </div>
 </template>
 
 <script>
 import MiLista from './components/MiLista.vue'
+import Formulario from './components/Formulario.vue'
 export default {
   name: 'App',
   components: {  
     MiLista,
+    Formulario,
   },
 }
 </script>

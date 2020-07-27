@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <img id="imagen" alt="Vue zorro" src="./assets/zorro.png">
     <MiLista msg="Sophie's List of  Things to learn!"/>
   </div>
 </template>
@@ -23,5 +23,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#imagen{
+  text-align: center;
+  width: 200px;
+  height: 200px;
 }
 </style>

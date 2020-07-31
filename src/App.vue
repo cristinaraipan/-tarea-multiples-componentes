@@ -3,17 +3,20 @@
     <img id="imagen" alt="Vue zorro" src="./assets/zorro.png">
     <MiLista msg="Sophie's List of  Things to learn!"/>
     <Formulario />
+    <CounterGame/>
   </div>
 </template>
 
 <script>
 import MiLista from './components/MiLista.vue'
 import Formulario from './components/Formulario.vue'
+import CounterGame from './components/CounterGame.vue'
 export default {
   name: 'App',
   components: {  
     MiLista,
     Formulario,
+    CounterGame,
   },
 }
 </script>

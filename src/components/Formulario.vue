@@ -41,17 +41,19 @@
         </table>
         <p>
           <input type="submit" value="Submit" />
-          <input type="button" value="Clear" v-on:click="limpiar"/>
+          <input type="button" value="Clear" v-on:click="limpiar" />
         </p>
       </form>
     </div>
-    
+
     <div id="respuesta" v-if="mostrar">
       <p>Nombre: {{ nombre }}</p>
       <p>Location: {{ location }}</p>
       <p>Categoria: {{ categoria }}</p>
       <p>Comments: {{ desc }}</p>
     </div>
+
+   
   </div>
 </template>
 
@@ -66,20 +68,19 @@ export default {
       categoria: 2,
       desc: "Descripción por defecto",
       mostrar: false,
+    
     };
   },
   methods: {
-      subir: function(){
-          this.mostrar = true;
-         
-          
-      },
-      limpiar: function(){
-        console.log("limpiar");
-        this.mostrar = false;
-      }
-      
-  }
+    subir: function () {
+      this.mostrar = true;
+    },
+    limpiar: function () {
+      console.log("limpiar");
+      this.mostrar = false;
+    },
+ 
+  },
 };
 </script>
 
@@ -114,4 +115,5 @@ select {
   border: 1px solid black;
   margin: auto;
 }
+
 </style>

@@ -1,22 +1,30 @@
 <template>
   <div id="app">
     <img id="imagen" alt="Vue zorro" src="./assets/zorro.png">
-    <MiLista msg="Sophie's List of  Things to learn!"/>
-    <Formulario />
-    <CounterGame/>
+   <!--  <MiLista msg="Sophie's List of  Things to learn!"/>
+    <Formulario /> -->
+   <!--  <CounterGame/> -->
+    <NinjaOro :totalOro="totalOro" :oroActual="oroActual" :historial="historial"/>
+
   </div>
 </template>
 
 <script>
-import MiLista from './components/MiLista.vue'
+/* import MiLista from './components/MiLista.vue'
 import Formulario from './components/Formulario.vue'
-import CounterGame from './components/CounterGame.vue'
+import CounterGame from './components/CounterGame.vue' */
+import NinjaOro from './components/NinjaOro.vue'
+import store from "@/store" 
 export default {
   name: 'App',
   components: {  
-    MiLista,
+  /*   MiLista,
     Formulario,
-    CounterGame,
+    CounterGame, */
+    NinjaOro
+  },
+  data(){
+    return store.state;
   },
 }
 </script>

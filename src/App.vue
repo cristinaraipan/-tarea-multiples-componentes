@@ -4,7 +4,7 @@
    <!--  <MiLista msg="Sophie's List of  Things to learn!"/>
     <Formulario /> -->
    <!--  <CounterGame/> -->
-    <NinjaOro :totalOro="totalOro" :oroActual="oroActual" :historial="historial"/>
+    <NinjaOro :totalOro="totalOro" :historial="historial" />
 
   </div>
 </template>

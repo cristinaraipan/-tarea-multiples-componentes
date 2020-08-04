@@ -1,45 +1,42 @@
 export default {
     state: {
         totalOro: 0,
-        oroActual: 0,
-        /* mostrar: false, */
         historial: [],
     },
-    cantidadOro(opcion){
-        /* this.state.mostrar = true; */
-        if (opcion == 'farm') {
-            this.state.oroActual = this.randomInteger(10, 20);
+   
+    agregarOro(opcion) {
+        let oroActual= 0;
+        
+        if (opcion == "farm") {
+            oroActual = this.randomInteger(10, 20);
+            this.state.totalOro += oroActual;
         }
-        if (opcion == 'cave') {
-            this.state.oroActual = this.randomInteger(5, 10);
+        if (opcion == "cave") {
+            oroActual = this.randomInteger(5, 10);
+            this.state.totalOro += oroActual;
         }
-        if (opcion == 'house') {
-            this.state.oroActual = this.randomInteger(2, 5);
+        if (opcion == "house") {
+            oroActual = this.randomInteger(2, 5);
+            this.state.totalOro += oroActual;
         }
-        if (opcion == 'casino') {
-            this.state.oroActual = this.randomNegativos(-50, 50);
+        if (opcion == "casino") {
+            oroActual = this.randomInteger(-50, 50);
+            this.state.totalOro += oroActual;
         }
+        
         let obj = {};
-        obj.oroActual = this.state.oroActual;
+        if( oroActual >= 0){
+            obj.resultado = "Earned";
+        }else{
+            obj.resultado = 'Lost';
+        }
+        //oroActual >= 0 ? obj.resultado = "Earned" : obj.resultado ="Lost";
+        obj.oroActual = oroActual;
         obj.origen = opcion;
+        obj.fechaActual = new Date();
         this.state.historial.push(obj);
         console.log(this.state.historial);
         
-    },
-    agregarOro(opcion) {
-        /* this.state.mostrar = true; */
-        if (opcion == 1) {
-            this.state.totalOro += this.randomInteger(10, 20);
-        }
-        if (opcion == 2) {
-            this.state.totalOro += this.randomInteger(5, 10);
-        }
-        if (opcion == 3) {
-            this.state.totalOro += this.randomInteger(2, 5);
-        }
-        if (opcion == 4) {
-            this.state.totalOro += this.randomNegativos(-50, 50);
-        }
     },
     randomInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -47,9 +44,5 @@ export default {
     randomNegativos(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     },
-    /* fechaActual(){
-        this.state.fehcaIngreso = Date();
-
-    } */
-
+    
 };

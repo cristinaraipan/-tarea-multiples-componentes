@@ -6,42 +6,44 @@
       <div id="caja2">
         <h2 id="subtitulo">Farm</h2>
         <p>(earns 10-20 golds)</p>
-        <button @click="agregarOro(1), cantidadOro('farm')">Find Gold</button>
+        <button @click="agregarOro('farm')">Find Gold</button>
       </div>
       <div id="caja2">
         <h2 id="subtitulo">Cave</h2>
         <p>(earns 5-10 golds)</p>
-        <button @click="agregarOro(2), cantidadOro('cave')">Find Gold</button>
+        <button @click="agregarOro('cave')">Find Gold</button>
       </div>
       <div id="caja2">
         <h2 id="subtitulo">House</h2>
         <p>(earns 2-5 golds)</p>
-        <button @click="agregarOro(3), cantidadOro('house')">Find Gold</button>
+        <button @click="agregarOro('house')">Find Gold</button>
       </div>
       <div id="caja2">
         <h2 id="subtitulo">Casino</h2>
         <p>(earns/takes 0-50 golds)</p>
-        <button @click="agregarOro(4), cantidadOro('casino')">Find Gold</button>
+        <button @click="agregarOro('casino')">Find Gold</button>
       </div>
     </div>
     <div id="resultados">
       <h4>Activitues:</h4>
       <div id="totales">
-        <p>Earned {{ historial }}</p>
+        <p v-for="(elemento, indice) in historial" v-bind:key="indice">{{ elemento.resultado }} {{ elemento.oroActual }} golds from {{ elemento.origen }} 
+          ({{ new Date() | moment("DD MMM YYYY HH:mm:ss A") }})</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from "vue";
 import store from "@/store";
+Vue.use(require('vue-moment'));
 export default {
   name: "NinjaOro",
   props: {
-    totalOro: Number,
-    oroActual: Number,
-    /* mostrar: Boolean, */
+    totalOro: Number, 
     historial: Array,
+    fechaActual: Date,
   },
 
   methods: {

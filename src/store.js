@@ -44,5 +44,12 @@ export default {
     randomNegativos(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     },
+    resetearDatos(){
+        if(window.confirm("Quieres resetear tus datos?")){
+            this.state.totalOro = 0;
+            this.state.historial = [];
+        }
+    }
+       
     
 };

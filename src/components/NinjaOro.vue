@@ -31,6 +31,7 @@
           ({{ new Date() | moment("DD MMM YYYY HH:mm:ss A") }})</p>
       </div>
     </div>
+    <button id="botonReset" @click="resetearDatos()">Reset</button>
   </div>
 </template>
 
@@ -54,6 +55,9 @@ export default {
     cantidadOro(opcion) {
       store.cantidadOro(opcion);
      /*  store.mostrar(opcion); */
+    },
+    resetearDatos(){
+      store.resetearDatos();
     },
     
   },
@@ -85,5 +89,9 @@ export default {
   border: 1px solid black;
   text-align: left;
   padding-left: 10px;
+}
+#botonReset{
+  margin-top: 10px;
+  width: 60px;
 }
 </style>

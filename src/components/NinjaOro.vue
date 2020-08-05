@@ -27,7 +27,7 @@
     <div id="resultados">
       <h4>Activitues:</h4>
       <div id="totales">
-        <p v-for="(elemento, indice) in historial" v-bind:key="indice">{{ elemento.resultado }} {{ elemento.oroActual }} golds from {{ elemento.origen }} 
+        <p v-bind:class="{verde: elemento.oroActual >= 0, rojo: elemento.oroActual < 0}" v-for="(elemento, indice) in historial" v-bind:key="indice">{{ elemento.resultado }} {{ elemento.oroActual }} golds from {{ elemento.origen }} 
           ({{ new Date() | moment("DD MMM YYYY HH:mm:ss A") }})</p>
       </div>
     </div>
@@ -93,5 +93,11 @@ export default {
 #botonReset{
   margin-top: 10px;
   width: 60px;
+}
+.verde{
+  color: green;
+}
+.rojo{
+  color:red;
 }
 </style>

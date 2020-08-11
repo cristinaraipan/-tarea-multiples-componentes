@@ -1,22 +1,29 @@
 <template>
-     <div id="CounterGame">
-      <h1 id="titulo">Counter Game</h1>
-      <h3 id="resultado">Clicks: {{ cantidadClicks }} Hover: {{ cantidadHovered }}</h3>
-      <button @click="contarClick()" @mouseenter="sobreBoton()">Clickea!</button>
-    </div>
+  <div id="CounterGame">
+    <p>{{ count }}</p>
+    <button @click="onClick()">Click me</button>
+    <h1 id="titulo">Counter Game</h1>
+    <h3 id="resultado">Clicks: {{ cantidadClicks }} Hover: {{ cantidadHovered }}</h3>
+    <button @click="contarClick()" @mouseenter="sobreBoton()">Clickea!</button>
+  </div>
 </template>
 <script>
 export default {
-    name: "CounterGame",
-    props: {},
-    data: function(){
-        return{
-            cantidadClicks: 0,
-            cantidadHovered: 0,
-        }
+  name: "CounterGame",
+  computed: {
+    count() {
+      return this.$store.state.count;
     },
-    methods: {
-           contarClick() {
+  },
+  props: {},
+  data: function () {
+    return {
+      cantidadClicks: 0,
+      cantidadHovered: 0,
+    };
+  },
+  methods: {
+    contarClick() {
       this.cantidadClicks++;
       localStorage.setItem("cantidadClick", this.cantidadClicks);
     },
@@ -24,9 +31,11 @@ export default {
       this.cantidadHovered++;
       localStorage.setItem("cantidadHover", this.cantidadHovered);
     },
-
+    onClick() {
+      this.$store.commit("increment");
     },
-}
+  },
+};
 </script>
 <style scoped>
 #titulo {

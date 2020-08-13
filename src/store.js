@@ -1,3 +1,4 @@
+
 export default {
     state: {
         totalOro: 0,
@@ -49,7 +50,7 @@ export default {
             this.state.totalOro = 0;
             this.state.historial = [];
         }
-    }
-       
+    }, 
     
 };
+

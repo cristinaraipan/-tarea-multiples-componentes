@@ -1,10 +1,8 @@
 <template>
   <div id="CounterGame">
-    <p>{{ count }}</p>
-    <button @click="onClick()">Click me</button>
     <h1 id="titulo">Counter Game</h1>
-    <h3 id="resultado">Clicks: {{ cantidadClicks }} Hover: {{ cantidadHovered }}</h3>
-    <button @click="contarClick()" @mouseenter="sobreBoton()">Clickea!</button>
+    <h3 id="resultado">Clicks: {{ count }} Hover: {{ cantidadHovered }}</h3>
+    <button @click="onClick()" @mouseenter="sobreBoton()">Clickea!</button>
   </div>
 </template>
 <script>
@@ -23,10 +21,6 @@ export default {
     };
   },
   methods: {
-    contarClick() {
-      this.cantidadClicks++;
-      localStorage.setItem("cantidadClick", this.cantidadClicks);
-    },
     sobreBoton() {
       this.cantidadHovered++;
       localStorage.setItem("cantidadHover", this.cantidadHovered);

@@ -5,6 +5,7 @@
       <router-link class="link" to="/CounterGame">Counter Game</router-link>
       <router-link class="link" to="/NinjaOro">NinjaOro</router-link>
       <router-link class="link" to="/">Mi Lista</router-link>
+      <router-link class="link" to='/Peliculas'>Peliculas</router-link>
     </header>
     <img id="imagen" alt="Vue zorro" src="./assets/zorro.png">
    <!--  <MiLista msg="Sophie's List of  Things to learn!"/>
